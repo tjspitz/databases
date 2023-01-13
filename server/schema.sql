@@ -1,4 +1,4 @@
-DROP DATABASE chat;
+DROP DATABASE chat; /* <-- David is clever */
 
 CREATE DATABASE chat;
 
