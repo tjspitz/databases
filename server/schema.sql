@@ -6,7 +6,7 @@ USE chat;
 
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
-  username VARCHAR(255),
+  username VARCHAR(255) UNIQUE,
   PRIMARY KEY(id)
 );
 
