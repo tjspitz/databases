@@ -3,7 +3,7 @@ var db = require('../db');
 module.exports = {
   getAll: function (callback) {
     db.query(
-      `SELECT users.username, messages.id, messages.text, messages.roomname FROM users INNER JOIN messages ON messages.user_id = users.id`,
+      `SELECT users.username, messages.id, messages.message, messages.roomname FROM users INNER JOIN messages ON messages.user_id = users.id`,
       (err, res) => {
         if (err) {
           callback(err)
@@ -15,7 +15,7 @@ module.exports = {
   }, // a function which produces all the messages
   create: function (req, callback) {
     db.query(
-      `INSERT INTO messages (user_id, text, roomname) VALUES((SELECT id FROM users WHERE username = '${req.username}'), '${req.message}', '${req.roomname}')`,
+      `INSERT INTO messages (user_id, message, roomname) VALUES((SELECT id FROM users WHERE username = '${req.username}'), '${req.message}', '${req.roomname}')`,
       (err) => {
         if (err) {
           callback(err)

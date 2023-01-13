@@ -24,7 +24,7 @@ CREATE TABLE users (
 CREATE TABLE messages (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
-  text VARCHAR(255) NOT NULL,
+  message VARCHAR(255) NOT NULL,
   roomname VARCHAR(255) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id),
   PRIMARY KEY(id)
